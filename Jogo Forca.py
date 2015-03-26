@@ -2,21 +2,37 @@
 # Jogo da Forca
 
 import turtle
+
+
+'''entrada = open("entrada.txt", encoding="utf-8")
+conteudo = entrada.readlines()'''
+
+results = []
+with open('entrada.txt') as inputfile:
+    for line in inputfile:
+        results.append(line.strip())
+
+
 window = turtle.Screen()
 window.bgcolor("white")
 window.title("Forca")
 turtle2 = turtle.Turtle()
 turtle2.hideturtle()
+
 turtle3 = turtle.Turtle()
 turtle3.pu ()
 turtle3.setpos(100, -200)
+turtle3.shape("turtle")
+
 turtle4 = turtle.Turtle()
 turtle4.pu ()
 turtle4.setpos(100, -230)
+
 turtle5 = turtle.Turtle
-turtle5.setpos (100, -190)
 
 reference = 1
+chute = 0
+variavel_texto = "n"
 
 def forca ():
     turtle.pu()
@@ -29,16 +45,30 @@ def forca ():
     turtle.right(90)
     turtle.forward(50)
     
-def turn(x, y):
-    if x>0:
-        turtle.left(180)
-        turtle.forward(100)
-        
-def sim(x, y):
-    if 90 > x > 110 and -190 > y > -210:
-        turtle3.hideturtle()
+def cabeça ():
+    pass
     
-        
+
+def sim(x, y):
+    if 100 < x < 135 and -175 > y > -205:
+          global chute
+          chute += 1
+          turtle3.forward(35)
+          turtle3.left(90)
+          turtle3.forward(10)
+          turtle3.pd()
+          turtle3.circle(20)
+          turtle2.clear()
+          turtle3.clear()
+          turtle4.clear()
+          if chute >= 1:
+              print(results[2])
+              
+              variavel_texto = window.textinput("digite o seu chute", " ") 
+
+
+              
+                                      
 while reference == 1:
     
    forca ()
@@ -48,16 +78,23 @@ while reference == 1:
    turtle2.write("Você quer começar a jogar Forca?", move=False, align="left", font=("Arial", 16, "normal"))
    turtle3.write("Sim", move=False, align="left", font=("Arial", 16, "normal"))
    turtle4.write("Não", move=False, align="left", font=("Arial", 16, "normal"))
-#variavel_texto = window.textinput("Janela de Resposta", " ")
-   turtle.onscreenclick(turn)  # Now clicking into the turtle will turn it.
+   turtle.onscreenclick(sim)  # Now clicking into the turtle will turn it.
    turtle.onclick(None)  # event-binding will be removed
    turtle.mainloop()
    
    
    
-  
-       
    
    
-   
-   
+   '''
+def linhas ()
+   x =0
+   for x <= len[palavra]:
+       turtle.forward(20)
+       turtle.pu()
+       turtle.forward(10)
+       turtle.pd()
+       x += 1
+        '''
+          
+ 
