@@ -3,19 +3,17 @@
 
 import turtle
 
-
-'''entrada = open("entrada.txt", encoding="utf-8")
-conteudo = entrada.readlines()'''
-
-results = []
+palavras = []
 with open('entrada.txt') as inputfile:
     for line in inputfile:
-        results.append(line.strip())
+        palavras.append(line.strip())
+palavras = [element.lower() for element in palavras]
 
 
 window = turtle.Screen()
 window.bgcolor("white")
 window.title("Forca")
+
 turtle2 = turtle.Turtle()
 turtle2.hideturtle()
 
@@ -29,6 +27,7 @@ turtle4.pu ()
 turtle4.setpos(100, -230)
 
 turtle5 = turtle.Turtle
+reference2 = 1 
 
 reference = 1
 chute = 0
@@ -45,10 +44,6 @@ def forca ():
     turtle.right(90)
     turtle.forward(50)
     
-def cabeça ():
-    pass
-    
-
 def sim(x, y):
     if 100 < x < 135 and -175 > y > -205:
           global chute
@@ -61,40 +56,22 @@ def sim(x, y):
           turtle2.clear()
           turtle3.clear()
           turtle4.clear()
-          if chute >= 1:
-              print(results[2])
-              
-              variavel_texto = window.textinput("digite o seu chute", " ") 
-
-
-              
+    turtle.onscreenclick(None)
                                       
-while reference == 1:
-    
-   forca ()
-   turtle2.pu()
-   turtle2.setpos(-250,-200)
-   turtle2.pd()
-   turtle2.write("Você quer começar a jogar Forca?", move=False, align="left", font=("Arial", 16, "normal"))
-   turtle3.write("Sim", move=False, align="left", font=("Arial", 16, "normal"))
-   turtle4.write("Não", move=False, align="left", font=("Arial", 16, "normal"))
-   turtle.onscreenclick(sim)  # Now clicking into the turtle will turn it.
-   turtle.onclick(None)  # event-binding will be removed
-   turtle.mainloop()
-   
-   
-   
-   
-   
-   '''
-def linhas ()
-   x =0
-   for x <= len[palavra]:
-       turtle.forward(20)
-       turtle.pu()
-       turtle.forward(10)
-       turtle.pd()
-       x += 1
-        '''
-          
- 
+forca ()
+turtle2.pu()
+turtle2.setpos(-250,-200)
+turtle2.pd()
+turtle2.write("Você quer começar a jogar Forca?", move=False, align="left", font=("Arial", 16, "normal"))
+turtle3.write("Sim", move=False, align="left", font=("Arial", 16, "normal"))
+turtle4.write("Não", move=False, align="left", font=("Arial", 16, "normal"))
+turtle.onscreenclick(sim)  # Now clicking into the turtle will turn it.
+
+while chute == 1:
+    variavel_texto = window.textinput("Digite o seu chute", " ")
+
+
+
+
+
+
