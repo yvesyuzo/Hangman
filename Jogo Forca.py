@@ -1,15 +1,19 @@
 # Yves Yuzo Sakamoto
 # Jogo da Forca
-
+import random 
 import turtle
+import time
 
-palavras = []
-with open('entrada.txt') as inputfile:
-    for line in inputfile:
-        palavras.append(line.strip())
-palavras = [element.lower() for element in palavras]
+palavra_da_rodada = []
+raw = open("entrada.txt", encoding="utf-8")
+palavras = raw.readlines()
 
-
+lista = []
+for pa in palavras:
+    x = pa.strip().lower()
+    if x != "":
+        lista.append(x)
+         
 window = turtle.Screen()
 window.bgcolor("white")
 window.title("Forca")
@@ -27,13 +31,17 @@ turtle4.pu ()
 turtle4.setpos(100, -230)
 
 turtle5 = turtle.Turtle
-reference2 = 1 
+
+turtle6 = turtle.Turtle()
+turtle6.pu ()
+turtle6.setpos(-200, -100)
 
 reference = 1
 chute = 0
-variavel_texto = "n"
 
-def forca ():
+##################################
+  
+def forca ():     
     turtle.pu()
     turtle.setpos(-200,-100)
     turtle.pd()
@@ -42,36 +50,39 @@ def forca ():
     turtle.right(90)
     turtle.forward(75)
     turtle.right(90)
-    turtle.forward(50)
+    turtle.forward(50)    
+                                                      
+def traços (x):
+    for i in range(0, x):
+        turtle6.forward(5)
+        turtle6.pd()
+        turtle6.forward(15)
+        turtle6.pu()
+
+
+
+forca()     
+
+
+while len(lista) != 0:
+    segredo = random.choice(palavras)                
+    traços (len(segredo))
+    chute = segredo.strip
+    while len(segredo) != 0:
+        chute = window.textinput("Digite o seu chute", " ")
+        if chute in segredo
+        
     
-def sim(x, y):
-    if 100 < x < 135 and -175 > y > -205:
-          global chute
-          chute += 1
-          turtle3.forward(35)
-          turtle3.left(90)
-          turtle3.forward(10)
-          turtle3.pd()
-          turtle3.circle(20)
-          turtle2.clear()
-          turtle3.clear()
-          turtle4.clear()
-    turtle.onscreenclick(None)
-                                      
-forca ()
-turtle2.pu()
-turtle2.setpos(-250,-200)
-turtle2.pd()
-turtle2.write("Você quer começar a jogar Forca?", move=False, align="left", font=("Arial", 16, "normal"))
-turtle3.write("Sim", move=False, align="left", font=("Arial", 16, "normal"))
-turtle4.write("Não", move=False, align="left", font=("Arial", 16, "normal"))
-turtle.onscreenclick(sim)  # Now clicking into the turtle will turn it.
+    
+        
+        
+        
+    
+    
+    
+        
+            
 
-while chute == 1:
-    variavel_texto = window.textinput("Digite o seu chute", " ")
-
-
-
-
-
-
+  
+              
+turtle.done()
