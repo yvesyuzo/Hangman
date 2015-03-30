@@ -7,6 +7,9 @@ import time
 palavra_da_rodada = []
 raw = open("entrada.txt", encoding="utf-8")
 palavras = raw.readlines()
+erros = 0
+letras_chutadas = []
+posições_das_letras = []
 
 lista = []
 for pa in palavras:
@@ -59,18 +62,38 @@ def traços (x):
         turtle6.forward(15)
         turtle6.pu()
 
-
-
+def ocorrencias (chute, segredo):
+    pdl = list()
+    for l in range(len(segredo)):
+        if chute == segredo[l]:
+            pdl.append(l)
+        #segredo = segredo.replace("1", chute, 1)
+        
+    return pdl
+    
+def       
+    
+    
+    
+        
+    
+    
 forca()     
 
 
 while len(lista) != 0:
     segredo = random.choice(palavras)                
     traços (len(segredo))
-    chute = segredo.strip
+    segredo_split = segredo.split
     while len(segredo) != 0:
         chute = window.textinput("Digite o seu chute", " ")
-        if chute in segredo
+        if chute not in letras_chutadas:
+            if chute in segredo:
+                posições_das_letras = ocorrencias (chute, segredo)
+                
+            
+            
+            
         
     
     
