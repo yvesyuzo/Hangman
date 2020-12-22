@@ -3,7 +3,7 @@
 dd/mm/yyyy
 
 ### Project Title
-Jogo da Forca
+Hangman
 
 ### Description
 This project is a simpe code to play Hangman:
